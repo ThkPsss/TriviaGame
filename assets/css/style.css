@@ -1,6 +1,6 @@
 *{
     box-sizing: border-box;
-    background-image: url("/Users/thkps/code/ucf/homework/week5/TriviaGame/assets/css/images/league.jpg")
+    background-image: url("league.jpg")
 }
 .main-header{
     text-align: center;
