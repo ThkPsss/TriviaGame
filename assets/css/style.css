@@ -1,15 +1,29 @@
 body{
     background-image: url("league.jpg")
 }
+
 #container{
     margin-left: auto;
     margin-right: auto;
     width: 800px;
 
 }
+
 #header{
     text-align: center;
     background: white;
     border: 1px;
     border-color: black;
+}
+
+#answers{
+
+}
+
+#main{
+    background: white;
+}
+#display{
+    text-align: center;
+    background: white;
 }
