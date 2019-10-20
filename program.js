@@ -1,49 +1,121 @@
-                /*<p>Which Champion is known as "The Bounty Hunter"?</p>
-                <div id="answers">
-                    <input type="checkbox">Graves</input> <input type="checkbox">Talon</input> <input type="checkbox">Miss Fortune</input> <input type="checkbox">Master Yi</input>
-                </div>
+                /*
+                Which Champion is known as "The Bounty Hunter"?
+                
+                    Graves - Talon - Miss Fortune - Master Yi 
+                
 
 
 
 
 
-                <p>Which champion says this line?: "Join the glorious evolution."</p>
-                <div id="answers">
-                    <input type="checkbox">Blitzcrank</input> <input type="checkbox">Orrn</input> <input type="checkbox">Viktor</input> <input type="checkbox">Olaf</input>
-                </div>
+                Which champion says this line?: "Join the glorious evolution."
+                
+                    Blitzcrank - Orrn - Viktor - Olaf 
+                
 
 
 
 
-                <p>Who was Gangplank's first love?</p>
-                <div id="answers">
-                    <input type="checkbox">Illaoi</input> <input type="checkbox">Lissandra</input> <input type="checkbox">Neeko</input> <input type="checkbox">Fiora</input>
-                </div>
+                Who was Gangplank's first love?
+                
+                    Illaoi - Lissandra - Neeko - Fiora 
+                
 
 
 
 
-                <p>Which champion did Faker use in his famous outplay vs KT's Ryu in 2014?</p>
-                <div id="answers">
-                    <input type="checkbox">Zed</input> <input type="checkbox">Ryze</input> <input type="checkbox">Orianna</input> <input type="checkbox">LeBlanc</input>
-                </div>
+                Which champion did Faker use in his famous outplay vs KT's Ryu in 2014?
+                
+                    Zed - Ryze - Orianna - LeBlanc 
+                
 
 
 
 
                 
-                <p>What does Warwick's ult range scale off of?</p>
-                <div id="answers">
-                    <input type="checkbox">Attack Damage(AD)</input> <input type="checkbox">Ability Power(AP)</input> <input type="checkbox">Attack Speed(AS)</input> <input type="checkbox">Movement Speed(MS)</input>
-                </div>
+                What does Warwick's ult range scale off of?
+                
+                    Attack Damage(AD) - Ability Power(AP) - Attack Speed(AS) - Movement Speed(MS) 
+                
 
 
 
 
-                <p>Which of the champions listed below is the communities most hated champion?</p>
-                <div id="answer">
-                    <input type="checkbox">Zed</input> <input type="checkbox">Riven</input> <input type="checkbox">Yasuo</input> <input type="checkbox">Pyke</input>
-                </div>*/
+                Which of the champions listed below is the communities most hated champion?
+                
+                    Zed - Riven - Yasuo - Pyke 
+                */
+//===================================================================================================================================================================================
 
+//Globals
+const start = document.getElementById("start")
+const trivia = document.getElementById("trivia")
+const question = document.getElementById("question")
+const qImg = document.getElementById("qImg")
+const A = document.getElementById("A")
+const B = document.getElementById("B")
+const C = document.getElementById("C")
+const D = document.getElementById("D")
+const counter = document.getElementById("counter")
+const timeGauge = document.getElementById("timeGauge")
+const progress = document.getElementById("progress")
+const scoreDiv = document.getElementById("score")
 
+let questions = [
+    {
+        question: "Which Champion is known as 'The Bounty Hunter'?",
+        imgSrc: "assets/img/maxresdefault.jpg",
+        choiceA: "",
+        choiceB: "",
+        choiceC: "",
+        choiceD: "",
+        correct: ""
+    },
+    {
+        question: "",
+        imgSrc: "",
+        choiceA: "",
+        choiceB: "",
+        choiceC: "",
+        choiceD: "",
+        correct: ""
+    },
+    {
+        question: "",
+        imgSrc: "",
+        choiceA: "",
+        choiceB: "",
+        choiceC: "",
+        choiceD: "",
+        correct: ""
+    },
+    {
+        question: "",
+        imgSrc: "",
+        choiceA: "",
+        choiceB: "",
+        choiceC: "",
+        choiceD: "",
+        correct: ""
+    },
+    {
+        question: "",
+        imgSrc: "",
+        choiceA: "",
+        choiceB: "",
+        choiceC: "",
+        choiceD: "",
+        correct: ""
+    },
+    {
+        question: "",
+        imgSrc: "",
+        choiceA: "",
+        choiceB: "",
+        choiceC: "",
+        choiceD: "",
+        correct: ""
+    }
+    
+]
 
