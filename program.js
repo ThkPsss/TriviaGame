@@ -1,4 +1,4 @@
-/*<p>Which Champion is known as "The Bounty Hunter"?</p>
+                /*<p>Which Champion is known as "The Bounty Hunter"?</p>
                 <div id="answers">
                     <input type="checkbox">Graves</input> <input type="checkbox">Talon</input> <input type="checkbox">Miss Fortune</input> <input type="checkbox">Master Yi</input>
                 </div>
@@ -47,4 +47,3 @@
 
 
 
-                
