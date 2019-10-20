@@ -76,6 +76,12 @@ let questions = [
 
 const lastQuestion = questions.lenght - 1;
 let runningQuestion = 0;
+let count = 0;
+const questionTime = 10; // 10s
+const gaugeWidth = 150; // 150px
+const gaugeUnit = gaugeWidth /questionTime;
+let timer;
+
 
 //render a question
 function renderQuestion(){
@@ -92,12 +98,26 @@ function renderQuestion(){
 start.style.display = "none";
 renderQuestion();
 trivia.style.display = "block";
+renderProgress();
+renderCounter();
+timer = setInterval(renderCounter,1000); // 1000ms = 1s
 
-// render progress
+// render progress (Not working right now for some reason)
 function renderProgress(){
     for(let qIndex = 0; qIndex <= lastQuestion; qIndex++)
     {
-        progress.innerHTML += "<div class='prog' id="+ qIndex +"></div>"
+        progress.innerHTML += "<div class='prog' id="+ qIndex +"></div>";
+    }
+} 
+
+
+function renderCounter(){
+    if(count <= questionTime){
+        counter.innerHTML = count;
+        timeGauge.style.width = count * gaugeUnit + "px";
+        count++
+    }
+    else{
+        count = 0;
     }
 }
-
