@@ -1,61 +1,13 @@
-                /*
-                Which Champion is known as "The Bounty Hunter"?
-                
-                    Graves - Talon - Miss Fortune - Master Yi 
-                
-
-
-
-
-
-                Which champion says this line?: "Join the glorious evolution."
-                
-                    Blitzcrank - Orrn - Viktor - Olaf 
-                
-
-
-
-
-                Who was Gangplank's first love?
-                
-                    Illaoi - Lissandra - Neeko - Fiora 
-                
-
-
-
-
-                Which champion did Faker use in his famous outplay vs KT's Ryu in 2014?
-                
-                    Zed - Ryze - Orianna - LeBlanc 
-                
-
-
-
-
-                
-                What does Warwick's ult range scale off of?
-                
-                    Attack Damage(AD) - Ability Power(AP) - Attack Speed(AS) - Movement Speed(MS) 
-                
-
-
-
-
-                Which of the champions listed below is the communities most hated champion?
-                
-                    Zed - Riven - Yasuo - Pyke 
-                */
-//===================================================================================================================================================================================
 console.log("hello world");
 
 const start = document.getElementById("start")
 const trivia = document.getElementById("trivia")
 const question = document.getElementById("question")
 const qImg = document.getElementById("qImg")
-const A = document.getElementById("A")
-const B = document.getElementById("B")
-const C = document.getElementById("C")
-const D = document.getElementById("D")
+const choiceA = document.getElementById("A")
+const choiceB = document.getElementById("B")
+const choiceC = document.getElementById("C")
+const choiceD = document.getElementById("D")
 const counter = document.getElementById("counter")
 const timeGauge = document.getElementById("timeGauge")
 const progress = document.getElementById("progress")
@@ -66,55 +18,55 @@ let questions = [
     {
         question: "Which Champion is known as 'The Bounty Hunter'?",
         imgSrc: "assets/img/maxresdefault.jpg",
-        choiceA: "Wrong",
-        choiceB: "Wrong",
-        choiceC: "Correct",
-        choiceD: "Wrong",
+        choiceA: "Graves",
+        choiceB: "Talon",
+        choiceC: "Miss Fortune",
+        choiceD: "Master Yi",
         correct: "C"
     },
     {
         question: "Which champion says this line?: 'Join the glorious evolution.'",
         imgSrc: "assets/img/download.jpg",
-        choiceA: "Wrong",
-        choiceB: "Wrong",
-        choiceC: "Correct",
-        choiceD: "Wrong",
+        choiceA: "Blitzcrank",
+        choiceB: "Orrn",
+        choiceC: "Viktor",
+        choiceD: "Olaf",
         correct: "C"
     },
     {
         question: "Who was Gangplank's first love?",
         imgSrc: "assets/img/Gangplank_0.jpg",
-        choiceA: "Correct",
-        choiceB: "Wrong",
-        choiceC: "Wrong",
-        choiceD: "Wrong",
+        choiceA: "Illaoi",
+        choiceB: "Lissandra",
+        choiceC: "Neeko",
+        choiceD: "Fiora",
         correct: "A"
     },
     {
         question: "Which champion did Faker use in his famous outplay vs KT's Ryu in 2014?",
         imgSrc: "assets/img/faker-why-he-re-signed-skt-pressure-2019-league-of-legends.jpg",
-        choiceA: "Correct",
-        choiceB: "Wrong",
-        choiceC: "Wrong",
-        choiceD: "Wrong",
+        choiceA: "Zed",
+        choiceB: "Ryze",
+        choiceC: "Orianna",
+        choiceD: "LeBlanc",
         correct: "A"
     },
     {
         question: "What does Warwick's ult range scale off of?",
         imgSrc: "assets/img/Warwick_Splash_0.0.jpg",
-        choiceA: "Wrong",
-        choiceB: "Wrong",
-        choiceC: "Wrong",
-        choiceD: "Correct",
+        choiceA: "Attack Damage(AD)",
+        choiceB: "Ability Power(AP)",
+        choiceC: "Attack Speed(AS)",
+        choiceD: "Movement Speed(MS)",
         correct: "D"
     },
     {
         question: "Which of the champions listed below is the communities most hated champion?",
         imgSrc: "assets/img/mosthated.jpg",
-        choiceA: "Wrong",
-        choiceB: "Wrong",
-        choiceC: "Correct",
-        choiceD: "Wrong",
+        choiceA: "Zed",
+        choiceB: "Riven",
+        choiceC: "Yasuo",
+        choiceD: "Pyke",
         correct: "C"
     }
     
@@ -122,7 +74,7 @@ let questions = [
 
 //create veriables
 
-const lastQuestion = question.lenght - 1;
+const lastQuestion = questions.lenght - 1;
 let runningQuestion = 0;
 
 //render a question
