@@ -11,7 +11,7 @@ const choiceD = document.getElementById("D")
 const counter = document.getElementById("counter")
 const timeGauge = document.getElementById("timeGauge")
 const progress = document.getElementById("progress")
-const scoreDiv = document.getElementById("score")
+const scoreDiv = document.getElementById("scoreContainer")
 
 //create questions using objects
 let questions = [
@@ -81,6 +81,7 @@ const questionTime = 10; // 10s
 const gaugeWidth = 150; // 150px
 const gaugeUnit = gaugeWidth /questionTime;
 let timer;
+let score = 0;
 
 
 //render a question
@@ -94,21 +95,16 @@ function renderQuestion(){
     choiceC.innerHTML = q.choiceC;
     choiceD.innerHTML = q.choiceD;
 }
-
-start.style.display = "none";
-renderQuestion();
-trivia.style.display = "block";
-renderProgress();
-renderCounter();
-timer = setInterval(renderCounter,1000); // 1000ms = 1s
-
-// render progress (Not working right now for some reason)
-function renderProgress(){
-    for(let qIndex = 0; qIndex <= lastQuestion; qIndex++)
-    {
-        progress.innerHTML += "<div class='prog' id="+ qIndex +"></div>";
-    }
-} 
+//couldn't figure out how to make this work with jQurry, will ask later
+start.addEventListener("click",startQuiz);
+//start quiz
+function startQuiz(){
+    start.style.display = "none";
+    renderQuestion();
+    trivia.style.display = "block";
+    renderCounter();
+    timer = setInterval(renderCounter,1000); // 1000ms = 1s
+}
 
 
 function renderCounter(){
@@ -117,7 +113,64 @@ function renderCounter(){
         timeGauge.style.width = count * gaugeUnit + "px";
         count++
     }
-    else{
+    else if (count >= questionTime)
+    {
+        runningQuestion++;
+        renderQuestion();
+        count = 0;        
+    }
+    else if(runningQuestion < lastQuestion){
+        runningQuestion++;
+        renderQuestion();
         count = 0;
     }
+    else if(lastQuestion >= runningQuestion){
+        scoreRender();
+    }
+        
+    
+
+}
+
+//check answers
+
+function checkAnswer(answer){
+    if (answer == questions[runningQuestion].correct){
+        // answer is correct
+        score++
+        runningQuestion++;
+        renderQuestion();
+        count = 0;
+    }
+    else if(answer != questions[runningQuestion].correct)
+    {
+        // answer is wrong
+        runningQuestion++;
+        renderQuestion();
+        count = 0;
+    }
+    else if(runningQuestion < lastQuestion){
+        runningQuestion++;
+        renderQuestion();
+    }
+    else if(lastQuestion >= runningQuestion){
+        scoreRender();
+        
+    }
+        
+}
+
+
+function scoreRender(){
+    scoreDiv.style.display = "block";
+    const scorePercent = Math.round(100 * score/questions.length);
+    //$("#scoreDiv").text(scorePercent)
+
+    let img = (scorePercent >= 80) ? "assets/img/5.png":
+              (scorePercent >= 60) ? "assets/img/4.png":
+              (scorePercent >= 40) ? "assets/img/3.png":  
+              (scorePercent >= 20) ? "assets/img/2.png":
+              "assets/img/1.png";  
+    scoreDiv.innerHTML = "<img src="+ img +">";
+    scoreDiv.innerHTML += "<p>"+ scorePercent +"%</p>";     
 }
